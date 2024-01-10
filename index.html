@@ -199,55 +199,55 @@
         </section>
         <!-- End of portfolio section -->
 
-        <!-- Contact Section -->
-        <section id="contact" class="position-relative section">
-            <div class="container text-center">
-                <div class="contact text-left">
-                    <div class="form">
-                      <h6 class="section-title mb-4">Get in touch with me</h6>
-<form id="contactForm">
-    <div class="form-group">
-        <input type="email" class="form-control" name="user_email" id="exampleInputEmail1"
-            aria-describedby="emailHelp" placeholder="Enter email" required>
+<!-- Contact Section -->
+<section id="contact" class="position-relative section">
+    <div class="container text-center">
+        <div class="contact text-left">
+            <div class="form">
+                <h6 class="section-title mb-4">Get in touch with me</h6>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="user_email" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="contact-message" id="contactMessage" cols="30" rows="5" class="form-control"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block rounded w-lg" onclick="submitForm()">Send Message</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <textarea name="contact-message" id="contactMessage" cols="30" rows="5" class="form-control"
-            placeholder="Message"></textarea>
-    </div>
-    <button type="button" class="btn btn-primary btn-block rounded w-lg" onclick="submitForm()">Send Message</button>
-</form>
+</section>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-function submitForm() {
-    var userEmail = document.getElementById("exampleInputEmail1").value;
-    var message = document.getElementById("contactMessage").value;
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    function submitForm() {
+        var userEmail = document.getElementById("exampleInputEmail1").value;
+        var message = document.getElementById("contactMessage").value;
 
-    // You can add additional validation here if needed
+        // Use your actual API key directly for initialization
+        emailjs.init("your_api_key");
 
-    // Send email using Email.js
-    sendEmail(userEmail, message);
+        var emailParams = {
+            to_email: "nathaliaserranoa@hotmail.com",
+            subject: "New Message from Website",
+            body: message
+        };
 
-    // Display a pop-up message
-    alert('Thank you for your message!');
-}
-
-function sendEmail(email, message) {
-    emailjs.init("nathaliaserranoa@hotmail.com");
-
-    var emailParams = {
-        to_email: email,
-        subject: "New Message from Website",
-        body: message
-    };
-
-    emailjs.send("service_5smtobj", "email_template", emailParams)
-        .then(function(response) {
-            console.log("Email sent successfully", response);
-        }, function(error) {
-            console.log("Email sending failed", error);
-        });
-}
+        // Replace "service_5smtobj" with your actual Service ID, and "your_template_id" with your actual Template ID
+        emailjs.send("service_5smtobj", "your_template_id", emailParams)
+            .then(function(response) {
+                console.log("Email sent successfully", response);
+                // Add any additional actions or feedback here
+                alert('Thank you for your message!');
+            }, function(error) {
+                console.log("Email sending failed", error);
+                // Add error handling or feedback here
+                alert('Message sending failed. Please try again later.');
+            });
+    }
 </script>
 
                     </div>
