@@ -227,17 +227,15 @@
         var userEmail = document.getElementById("exampleInputEmail1").value;
         var message = document.getElementById("contactMessage").value;
 
-        // Use your actual API key directly for initialization
-        emailjs.init("your_api_key");
+        emailjs.init("9mbcwgxEyjSeUkSvk3EoV");
 
         var emailParams = {
             to_email: "nathaliaserranoa@hotmail.com",
             subject: "New Message from Website",
             body: message
         };
-
-        // Replace "service_5smtobj" with your actual Service ID, and "your_template_id" with your actual Template ID
-        emailjs.send("service_5smtobj", "your_template_id", emailParams)
+        
+        emailjs.send("service_5smtobj","template_l541icq", emailParams);
             .then(function(response) {
                 console.log("Email sent successfully", response);
                 // Add any additional actions or feedback here
