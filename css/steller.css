@@ -812,6 +812,7 @@ pre code {
   -ms-flex: 0 0 75%;
   flex: 0 0 75%;
   max-width: 75%;
+  text-align: justify;
 }
 
 .col-10 {
@@ -1078,6 +1079,7 @@ pre code {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%;
+    text-align: justify;
   }
 
   .col-sm-10 {
@@ -1349,6 +1351,7 @@ pre code {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%;
+    text-align: justify;
   }
 
   .col-md-10 {
