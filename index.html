@@ -253,24 +253,21 @@
         emailjs.init("CiQ82o_Cztc3sQ3UT");
 
         var emailParams = {
-            to_email: "nathaliaserranoa@hotmail.com",
-            subject: "New Message from Portfolio",
-            body: message
+            user_email: userEmail,
+            contact_message: message,
+            subject: "New Message from Portfolio"
         };
 
         emailjs.send("service_5smtobj", "template_l541icq", emailParams)
             .then(function(response) {
                 console.log("Email sent successfully", response);
-            
                 alert('Thank you for your message!');
             }, function(error) {
                 console.log("Email sending failed", error);
-           
                 alert('Message sending failed. Please try again later.');
             });
     }
 </script>
-
 
         </section>
         <!-- End of Contact Section -->
