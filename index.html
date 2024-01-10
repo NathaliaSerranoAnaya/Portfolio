@@ -254,18 +254,18 @@
 
         var emailParams = {
             to_email: "nathaliaserranoa@hotmail.com",
-            subject: "New Message from Website",
+            subject: "New Message from Portfolio",
             body: message
         };
 
         emailjs.send("service_5smtobj", "template_l541icq", emailParams)
             .then(function(response) {
                 console.log("Email sent successfully", response);
-                // Add any additional actions or feedback here
+            
                 alert('Thank you for your message!');
             }, function(error) {
                 console.log("Email sending failed", error);
-                // Add error handling or feedback here
+           
                 alert('Message sending failed. Please try again later.');
             });
     }
